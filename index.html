@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trivia Game</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <!-- Our CSS style sheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <h1>Totally Trivial Trivia !</h1>
+      <br />
+      <div id="display">Time Remaining: 30 seconds</div>
+      <br />
+     
+      <div id="start-button">
+        <button type="button" class="btn btn-primary btn-lg">Start</button>
+      </div>
+
+      <div class="container">
+        <h1>What was the first full length CGI movie ?</h1>
+        <input type="radio" name="ques1" value="1" />ABug's Life
+        <input type="radio" name="ques1" value="2" />Monster Inc
+        <input type="radio" name="ques1" value="3" />Toy Story
+        <input type="radio" name="ques1" value="4" />The lion king
+
+        <h1>Which of these es not a name of one of the spice girls ?</h1>
+        <input type="radio" name="ques2" value="1" />sporty spice
+        <input type="radio" name="ques2" value="2" />Fred spice
+        <input type="radio" name="ques2" value="3" />Scary spice
+        <input type="radio" name="ques2" value="4" />posh spice
+
+        <h1>Which NBA teame won the most titles in the 90s ?</h1>
+        <input type="radio" name="ques3" value="1" />New york knicks
+        <input type="radio" name="ques3" value="2" />Portland Trailbazers
+        <input type="radio" name="ques3" value="3" />Los Angeles Lakers
+        <input type="radio" name="ques3" value="4" />Chicago Bulls
+      </div>
+      <br />
+      <div id="done-button">
+      <button type="button" class="btn btn-primary btn-lg" onclick="check();">Done</button>
+      </div>
+      <div id="after-done">
+        <p id= "All Done"></p>
+        <p id= "number-correct" ></p>
+        <p id= "number-incorrect" ></p>
+        <p id= "number-unaswered" ></p>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+
+    <!-- Script -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+  </body>
+</html>
