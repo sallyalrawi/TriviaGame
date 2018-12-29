@@ -40,8 +40,8 @@ function stop() {
   clearInterval(intervalId);
   clockRunning = false;
 }
-start();
-stop();
+// start();
+// stop();
 // function recordLap() {
 //       and save the result in a variable.
 // var correctAnswer
