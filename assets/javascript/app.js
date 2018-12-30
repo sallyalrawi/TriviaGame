@@ -1,18 +1,12 @@
 // Trivia Game
 // =============================
 
-// // This code will run as soon as the page loads
-window.onload = function() {
-  $("#start-button").on("click", start);
-  $("#done-button").on("click", stop);
-};
-
 //   //  Variable that will hold our setTimeout that runs the time
+var timeRemaining =30;
 var intervalId;
-
 //   // prevents the clock from being sped up unnecessarily
 var clockRunning = false;
-var time = 30;
+var time = 0;
 var lap = 1;
 
 // Game counters
@@ -20,50 +14,33 @@ var correctAnswer=0;
 var incorrectAnswer=0;
 var unanswered=0;
 
-// define what happend in start function 
-function start() {
- 
+// define what happend when clicking the start button
+
+  $("#start-button").on("click", function() {
   // Reset the time 
-  time = 30;
+  time = 0;
   if (!clockRunning) {
-    for (var i=30;i<=30;i--){
+    
     intervalId = setInterval(count,1000);
     clockRunning = true;
     console.log(intervalId);
-    $("#display").append("Time Remaining:",clockRunning);
+    $("#display").html("<p>" + "Time Remaining:" + clockRunning +"</p>");
   }
-}
-}
 
-// define what happend in stop function  
-function stop() {
-  clearInterval(intervalId);
-  clockRunning = false;
-}
-// start();
-// stop();
-// function recordLap() {
-//       and save the result in a variable.
-// var correctAnswer
+});
 
-//     // DONE: Add the current lap and time to the "laps" div.
-// $("#laps").append("<p>Lap " + lap + " : " + converted + "</p>");
-
-//     // DONE: Increment lap by 1. Remember, we can't use "this" here.
-//     lap++;
-//   }
 function count() {
   //     // DONE: increment time by 1
   time++;
 
-  //     // DONE: Get the current time, pass that into the timeConverter function,
-  //     //       and save the result in a variable.
+  // Get the current time, pass that into the timeConverter function
+
   var converted = timeConverter(time);
   console.log(converted);
 
   //     // DONE: Use the variable we just created to show the converted time in the "display" div.
-  $("#display").text(converted);
-}
+  $("#display").text("Time Remaining :" + converted);
+
 function timeConverter(t) {
   var minutes = Math.floor(t / 60);
   var seconds = t - minutes * 60;
@@ -80,33 +57,53 @@ function timeConverter(t) {
 
   return minutes + ":" + seconds;
 }
-function check(){
-  var ques1 =document.container.ques1.value;
-  var ques2 =document.container.ques2.value;
-  var ques3 =document.container.ques3.value;
-   if (ques1=="The lion king"){
-     correctAnswer++;
-   }
-   else{
-     incorrectAnswer++;
-   }
-   if (ques2=="sporty spice"){
-    correctAnswer++;
-  }
-  else{
-    incorrectAnswer++;
-  }
-  if (ques3=="Portland Trailbazers"){
-    correctAnswer++;
-  } 
-  else{
-    incorrectAnswer++;
-  }
-  if (unanswered){
-    unanswered++;
-  }
+}
+
+// define what happend when click the done button 
+$("#done-button").on("click", function(){
+
+  clearInterval(intervalId);
+  clockRunning = false;
+ 
+    var ques1 =ques1.value;
+    var ques2 =ques2.value;
+    var ques3 =ques3.value;
+
+     if (ques1=="The lion king"){
+       correctAnswer++;
+     }
+     else{
+       incorrectAnswer++;
+     }
+     if (ques2=="sporty spice"){
+      correctAnswer++;
+    }
+    else{
+      incorrectAnswer++;
+    }
+    if (ques3=="Portland Trailbazers"){
+      correctAnswer++;
+    } 
+    else{
+      incorrectAnswer++;
+    }
+    if (unanswered){
+      unanswered++;
+    }
+  recordLap();
+});
+
+function recordLap() {
+     
+    // DONE: Add the current lap 
+$("#after-done").append("<h1> " +  "Totally Trivial Trivia !" + "</h1>");
+$("#after-done").append("<h2> " +  "All Done !" + "</h2>");
   document.getElementById("after-done").style.visibility ="visible";
   document.getElementById("number-correct").innerHTML ="correctAnswer:" + correctAnswer;
   document.getElementById("number-incorrect").innerHTML ="incorrectAnswer:" + incorrectAnswer;
   document.getElementById("number-unanswered").innerHTML ="unanswered:" + unanswered;
-}
+
+    // DONE: Increment lap by 1. 
+    lap++;
+  }
+
