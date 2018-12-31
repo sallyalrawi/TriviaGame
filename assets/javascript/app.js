@@ -1,7 +1,7 @@
 // Trivia Game
 // =============================
 
-//   //  Variable that will hold our setTimeout that runs the time
+//   //  Variable that will the time
 var timeRemaining =30;
 var intervalId;
 //   // prevents the clock from being sped up unnecessarily
@@ -30,15 +30,13 @@ var unanswered=0;
 });
 
 function count() {
-  //     // DONE: increment time by 1
+  // increment time by 1
   time++;
-
   // Get the current time, pass that into the timeConverter function
-
   var converted = timeConverter(time);
   console.log(converted);
 
-  //     // DONE: Use the variable we just created to show the converted time in the "display" div.
+  // Use the variable we just created to show the converted time in the "display" div.
   $("#display").text("Time Remaining :" + converted);
 
 function timeConverter(t) {
@@ -64,7 +62,7 @@ $("#done-button").on("click", function(){
 
   clearInterval(intervalId);
   clockRunning = false;
- 
+   
     var ques1 =ques1.value;
     var ques2 =ques2.value;
     var ques3 =ques3.value;
@@ -90,20 +88,25 @@ $("#done-button").on("click", function(){
     if (unanswered){
       unanswered++;
     }
+    
   recordLap();
+    
 });
 
 function recordLap() {
      
-    // DONE: Add the current lap 
-$("#after-done").append("<h1> " +  "Totally Trivial Trivia !" + "</h1>");
-$("#after-done").append("<h2> " +  "All Done !" + "</h2>");
-  document.getElementById("after-done").style.visibility ="visible";
-  document.getElementById("number-correct").innerHTML ="correctAnswer:" + correctAnswer;
-  document.getElementById("number-incorrect").innerHTML ="incorrectAnswer:" + incorrectAnswer;
-  document.getElementById("number-unanswered").innerHTML ="unanswered:" + unanswered;
-
-    // DONE: Increment lap by 1. 
+//  Add the current lap 
+ $("#after-done").append("<h1> " +  "Totally Trivial Trivia !" + "</h1>");
+ $("#after-done").append("<h2> " +  "All Done !" + "</h2>");
+ $("#after-done").style.visibility ="visible";
+ $("#number-correct").html("<p>" + "correctAnswer:" + correctAnswer + "</p>");
+ $("#number-incorrect").html("<p>" + "incorrectAnswer:" + incorrectAnswer + "</p>");
+ $("#number-unanswered").html("<p>" + "unanswered:" + unanswered + "</p>");
+    // Increment lap by 1. 
     lap++;
+    console.log(recordLap);
+  }
+  if (time === timeRemaining) {
+    recordLap();
   }
 
