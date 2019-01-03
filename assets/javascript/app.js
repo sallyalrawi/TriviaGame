@@ -90,7 +90,7 @@ function check(){
 function recordLap() {
      
 //  Add the current lap 
- $("#game-name").html("<h1>Totally Trivial Trivia!</h1>");
+
  $("#All-Done").html("<h2>All Done!</h2>");
  $("#number-correct").html("<p>" + "correctAnswer:" + correctAnswer + "</p>");
  $("#number-incorrect").html("<p>" + "incorrectAnswer:" + incorrectAnswer + "</p>");
