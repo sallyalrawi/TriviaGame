@@ -7,7 +7,7 @@ var intervalId;
 //   // prevents the clock from being sped up unnecessarily
 var clockRunning = false;
 var time = 0;
-var lap = 1;
+var lap = [];
 
 // Game counters
 var correctAnswer=0;
@@ -90,7 +90,6 @@ function check(){
 function recordLap() {
      
 //  Add the current lap 
-
  $("#All-Done").html("<h2>All Done!</h2>");
  $("#number-correct").html("<p>" + "correctAnswer:" + correctAnswer + "</p>");
  $("#number-incorrect").html("<p>" + "incorrectAnswer:" + incorrectAnswer + "</p>");
