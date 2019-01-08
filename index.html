@@ -26,27 +26,41 @@
       </div>
 
       <div class="container">
-        <h1>What was the first full length CGI movie ?</h1>
-        <input type="radio" name="ques1" value="1" />ABug's Life
-        <input type="radio" name="ques1" value="2" />Monster Inc
-        <input type="radio" name="ques1" value="3" />Toy Story
-        <input type="radio" name="ques1" value="4" />The lion king
-
-        <h1>Which of these es not a name of one of the spice girls ?</h1>
-        <input type="radio" name="ques2" value="1" />sporty spice
-        <input type="radio" name="ques2" value="2" />Fred spice
-        <input type="radio" name="ques2" value="3" />Scary spice
-        <input type="radio" name="ques2" value="4" />posh spice
-
-        <h1>Which NBA teame won the most titles in the 90s ?</h1>
-        <input type="radio" name="ques3" value="1" />New york knicks
-        <input type="radio" name="ques3" value="2" />Portland Trailbazers
-        <input type="radio" name="ques3" value="3" />Los Angeles Lakers
-        <input type="radio" name="ques3" value="4" />Chicago Bulls
+        <form>
+          <h1>What was the first full length CGI movie ?</h1>
+          <input type="radio" name="ques1" value="1" id="bug"/>
+          <label for="bug">A Bug's Life</label>
+          <input type="radio" name="ques1" value="2" id="monster"/>
+          <label for="monster">Monster Inc</label>
+          <input type="radio" name="ques1" value="3" id="toy"/>
+          <label for="toy">Toy Story</label>
+          <input type="radio" name="ques1" value="4" id="lion"/>
+          <label for="lion">The lion king</label> 
+  
+          <h1>Which of these es not a name of one of the spice girls ?</h1>
+          <input type="radio" name="ques2" value="1" id="sporty" />
+          <label for="sporty">sporty spice</label>
+          <input type="radio" name="ques2" value="2" id="fred"/>
+          <label for="fred">Fred spice</label>
+          <input type="radio" name="ques2" value="3" id="scary"/>
+          <label for="scary">Scary spice</label>
+          <input type="radio" name="ques2" value="4" id="posh"/>
+          <label for="posh">posh spice</label>
+          
+          <h1>Which NBA teame won the most titles in the 90s ?</h1>
+          <input type="radio" name="ques3" value="1" id="knicks"/>
+          <label for="knicks">New york knicks</label>
+          <input type="radio" name="ques3" value="2" id="portland"/>
+          <label for="portland">Portland Trailbazers</label>
+          <input type="radio" name="ques3" value="3" id="lakers" />
+          <label for="lakers">Los Angeles Lakers</label>
+          <input type="radio" name="ques3" value="4" id="chicago" />
+          <label for="chicago">Chicago Bulls</label>
+        </form>
       </div>
       <br />
       <div id="done-button">
-      <button type="button" class="btn btn-primary btn-lg" onclick="check();">Done</button>
+      <button type="button" class="btn btn-primary btn-lg">Done</button>
       </div>
       <div id="after-done">
         <p id= "game-name"></p>
