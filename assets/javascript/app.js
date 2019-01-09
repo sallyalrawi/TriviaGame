@@ -93,6 +93,7 @@ $("input[name=ques3]").on("click", function() {
     incorrectAnswer++;
     console.log(false);
   }
+  $("#number-unaswered").text(unanswered);
 });
 
 function recordLap() {
@@ -110,4 +111,5 @@ function recordLap() {
 if (time === timeRemaining) {
   recordLap();
   $("#after-done").text(recordLap);
+  $("#number-unaswered").text(unanswered);
 }
