@@ -22,7 +22,7 @@ $("#start-button").on("click", function() {
   if (!clockRunning) {
     intervalId = setInterval(decrement, 1000);
     clockRunning = true;
-    console.log(intervalId);
+    console.log("intervalid:" + intervalId);
   }
 });
 
@@ -39,6 +39,7 @@ function decrement() {
     recordLap();
   }
 }
+
 function stop() {
   clearInterval(intervalId);
 }
@@ -57,13 +58,13 @@ $("input[name=ques1]").on("click", function() {
   var numberAnswer = parseInt(answer);
   if (numberAnswer === 4) {
     correctAnswer++;
-    console.log(true);
+    console.log("question 1 correct answer:" + true);
   } else if (unanswered) {
     unanswered++;
-    console.log(unanswered);
+    console.log("question 1 unanswered:" + unanswered);
   } else {
     incorrectAnswer++;
-    console.log(false);
+    console.log("question 1 incorrect answer:" + false);
   }
 });
 $("input[name=ques2]").on("click", function() {
@@ -71,13 +72,13 @@ $("input[name=ques2]").on("click", function() {
   var numberAnswer = parseInt(answer);
   if (numberAnswer === 1) {
     correctAnswer++;
-    console.log(true);
+    console.log("question 2 correct answer:" + true);
   } else if (unanswered) {
     unanswered++;
-    console.log(unanswered);
+    console.log("question 2 unanswer:" + unanswered);
   } else {
     incorrectAnswer++;
-    console.log(false);
+    console.log("question 2 incorrect answer:" + false);
   }
 });
 $("input[name=ques3]").on("click", function() {
@@ -85,13 +86,13 @@ $("input[name=ques3]").on("click", function() {
   var numberAnswer = parseInt(answer);
   if (numberAnswer === 2) {
     correctAnswer++;
-    console.log(true);
+    console.log("question 3 correct answer:" + true);
   } else if (unanswered) {
     unanswered++;
-    console.log(unanswered);
+    console.log("question 3 unanswered:" + unanswered);
   } else {
     incorrectAnswer++;
-    console.log(false);
+    console.log("question 3 incorrect answer:" + false);
   }
   $("#number-unaswered").text(unanswered);
 });
@@ -103,13 +104,15 @@ function recordLap() {
   $("#number-incorrect").html(
     "<p>" + "incorrectAnswer:" + incorrectAnswer + "</p>"
   );
+  unanswered = 3 - correctAnswer - incorrectAnswer;
   $("#number-unaswered").html("<p>" + "unanswered:" + unanswered + "</p>");
   // Increment lap by 1.
   lap++;
-  // console.log(recordLap);
+  console.log('record lap:' + recordLap);
 }
 if (time === timeRemaining) {
   recordLap();
   $("#after-done").text(recordLap);
+  unanswered = 3 - correctAnswer - incorrectAnswer;
   $("#number-unaswered").text(unanswered);
 }
